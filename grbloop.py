@@ -83,7 +83,7 @@ def respond(comment, r):
 def scanComments():
     global processed
     try:
-        commentLimit = os.environ['COMMENT_LIMIT']
+        commentLimit = int(os.environ['COMMENT_LIMIT'])
         subreddits = os.environ['SUBREDDITS']
         for comment in r.subreddit(subreddits).comments(limit=commentLimit):
             if (
